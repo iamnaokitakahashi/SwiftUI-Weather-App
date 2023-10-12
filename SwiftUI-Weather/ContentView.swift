@@ -18,8 +18,22 @@ struct ContentView: View {
                 Text("Marin, CA")
                     .font(.system(size: 32, weight: .medium, design: .default))
                     .foregroundColor(.white)
-                    .background(Color.red)
-                    .frame(width: 200, height: 200)
+                    .padding() // you can put like 100, .buttom its very flexible
+                
+                VStack(spacing: 10) { // can play around with spacing between
+                    Image(systemName: "cloud.sun.fill") // systemNamefor SF symbols
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit) // doesn;t look strethced anymore
+                        .frame(width: 180, height: 180) // keep this frame square because SF S has them squared
+                    
+                    Text("76°") // option + shift + 8 = °
+                        .font(.system(size: 70, weight: .medium))
+                        .foregroundColor(.white)
+                }
+                
+                   Spacer() // this is a modifer, use it to stragically move your UI around, in this case since its at the bottom, it'll move the entire text to the top
+                
             }
         }
     }
