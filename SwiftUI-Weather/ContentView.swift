@@ -59,6 +59,18 @@ struct ContentView: View {
                 
                    Spacer() // this is a modifer, use it to stragically move your UI around, in this case since its at the bottom, it'll move the entire text to the top
                 
+                Button {
+                    print("tapped")
+                } label: {
+                    Text("Change Day Time")
+                        .frame(width: 280, height: 50)
+                        .background(Color.white)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .cornerRadius(10) //10 is apple looking bottom
+                }
+                
+                Spacer() // don't overuse spacers
+                
             }
         }
     }
