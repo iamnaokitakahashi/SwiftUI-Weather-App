@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+// struct are value types, they dont hold state
+// @state can hold struct -> created and destroyed all the time
 
 struct ContentView: View {
+    
+    @State private var isNight = false // declartive programming vs imperative programming
+    
     var body: some View {
         ZStack {
-            BackgroundView(topColor: .blue, bottomColor: Color("lightBlue"))
+            BackgroundView(isNight: $isNight) //binding - isNight is always the same, $ is the binding to the isNight
             
             VStack {
                 CityTextView(cityName: "Marin, CA")
                 
-                MainWeatherStatusView(imageName: "cloud.sun.fill", temperature: 76)
+                MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 76)
                 
                 HStack(spacing: 20) {
                     WeatherDayView(dayOfWeek: "TUE",
@@ -42,7 +47,7 @@ struct ContentView: View {
                    Spacer() // this is a modifer, use it to stragically move your UI around, in this case since its at the bottom, it'll move the entire text to the top
                 
                 Button {
-                    print("tapped")
+                    isNight.toggle() // when tapped, toggle from true to false and adjust the background gradient accordingly.
                 } label: {
                     WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
                 }
@@ -86,12 +91,11 @@ struct WeatherDayView: View { // everyting in swift is VIEW
 
 struct BackgroundView: View {
     
-    var topColor: Color
-    var bottomColor: Color
+    @Binding var isNight: Bool
     
     var body: some View {
         
-        LinearGradient(gradient: Gradient(colors: [topColor, bottomColor]),
+        LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue, isNight ? .gray : Color("lightBlue")]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(.all)
