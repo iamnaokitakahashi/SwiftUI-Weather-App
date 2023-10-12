@@ -30,22 +30,31 @@ struct ContentView: View {
                     Text("76°") // option + shift + 8 = °
                         .font(.system(size: 70, weight: .medium))
                         .foregroundColor(.white)
+                    
                 }
-                HStack {
-                    VStack {
-                        Text("Tue")
-                            .font(.system(size: 16, weight: .medium, design: .default))
-                            .foregroundColor(.white)
-                        Image(systemName: "cloud.sun.fill")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                        
-                        Text("76°") // option + shift + 8 = °
-                            .font(.system(size: 28, weight: .medium))
-                            .foregroundColor(.white)
-                    }
+                
+                Spacer()
+                
+                HStack(spacing: 20) {
+                    WeatherDayView(dayOfWeek: "TUE",
+                                   imageName: "cloud.sun.fill",
+                                   temperature: 74)
+                    
+                    WeatherDayView(dayOfWeek: "WED",
+                                   imageName: "sun.max.fill",
+                                   temperature: 88)
+                    
+                    WeatherDayView(dayOfWeek: "THU",
+                                   imageName: "wind.snow",
+                                   temperature: 55)
+                    
+                    WeatherDayView(dayOfWeek: "FRI",
+                                   imageName: "sunset.fill",
+                                   temperature: 60)
+                    
+                    WeatherDayView(dayOfWeek: "SAT",
+                                   imageName: "snow",
+                                   temperature: 25)
                 }
                 
                    Spacer() // this is a modifer, use it to stragically move your UI around, in this case since its at the bottom, it'll move the entire text to the top
@@ -58,5 +67,29 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct WeatherDayView: View { // everyting in swift is VIEW
+    
+    var dayOfWeek: String
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack { // command click on the vstack to refactor
+            Text(dayOfWeek) // replace Tues with dayOfWeek so create var dayOfWeek
+                .font(.system(size: 16, weight: .medium, design: .default))
+                .foregroundColor(.white)
+            Image(systemName: imageName) //not everyday is going to be cloudy or sunny, so create var imageName
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+            
+            Text("\(temperature)°") // instead of "76°"
+                .font(.system(size: 28, weight: .medium))
+                .foregroundColor(.white)
+        }
     }
 }
