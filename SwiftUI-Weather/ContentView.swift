@@ -31,6 +31,22 @@ struct ContentView: View {
                         .font(.system(size: 70, weight: .medium))
                         .foregroundColor(.white)
                 }
+                HStack {
+                    VStack {
+                        Text("Tue")
+                            .font(.system(size: 16, weight: .medium, design: .default))
+                            .foregroundColor(.white)
+                        Image(systemName: "cloud.sun.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                        
+                        Text("76°") // option + shift + 8 = °
+                            .font(.system(size: 28, weight: .medium))
+                            .foregroundColor(.white)
+                    }
+                }
                 
                    Spacer() // this is a modifer, use it to stragically move your UI around, in this case since its at the bottom, it'll move the entire text to the top
                 
