@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F5498FF2AD8E6A000BB5D91 /* SwiftUI-Weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SwiftUI-Weather.entitlements"; sourceTree = "<group>"; };
 		4F5F14EC2AD7A78F005D64AA /* SwiftUI-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5F14EF2AD7A78F005D64AA /* SwiftUI_WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherApp.swift; sourceTree = "<group>"; };
 		4F5F14F12AD7A78F005D64AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		4F5F14EE2AD7A78F005D64AA /* SwiftUI-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				4F5498FF2AD8E6A000BB5D91 /* SwiftUI-Weather.entitlements */,
 				4F5F14EF2AD7A78F005D64AA /* SwiftUI_WeatherApp.swift */,
 				4F5F14F12AD7A78F005D64AA /* ContentView.swift */,
 				4F5F14F32AD7A791005D64AA /* Assets.xcassets */,
@@ -418,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwiftUI-Weather/SwiftUI-Weather.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Weather/Preview Content\"";
@@ -446,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwiftUI-Weather/SwiftUI-Weather.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Weather/Preview Content\"";

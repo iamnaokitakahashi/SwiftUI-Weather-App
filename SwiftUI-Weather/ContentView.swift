@@ -76,9 +76,10 @@ struct WeatherDayView: View { // everyting in swift is VIEW
             Text(dayOfWeek) // replace Tues with dayOfWeek so create var dayOfWeek
                 .font(.system(size: 16, weight: .medium, design: .default))
                 .foregroundColor(.white)
-            Image(systemName: imageName) //not everyday is going to be cloudy or sunny, so create var imageName
-                .renderingMode(.original)
+            Image(systemName: imageName) // create var imageName
+                .symbolRenderingMode(.hierarchical) // this too
                 .resizable()
+                .foregroundStyle(.pink, .orange, .green) // more control for sf symbols
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
             
